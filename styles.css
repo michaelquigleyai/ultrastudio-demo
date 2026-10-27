@@ -241,6 +241,74 @@ a:focus-visible { outline: 3px solid var(--terra); outline-offset: 3px; }
   .review-lead + .review { border-top: 0; }
 }
 
+/* Phones: one compact Visit block and a short footer */
+@media (max-width: 760px) {
+  .visit { background: var(--terra-dk); padding: 44px 0 36px; }
+  .visit-band, .visit-detail { background: none; padding: 0; }
+  .visit h2 { font-size: clamp(2.2rem, 10vw, 2.8rem); }
+  .visit-address { margin: 10px 0 0; font-size: 18px; }
+  .visit-detail { margin-top: 22px; }
+  .visit-grid { gap: 20px; }
+  .visit-list li { padding: 9px 0; line-height: 1.5; }
+  .visit-list strong { display: inline; font-size: 18px; margin-right: .35em; }
+  .visit-links { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .visit-links .phone { grid-column: 1 / -1; min-height: 48px; font-size: 2rem; }
+  .visit-links a:not(.phone) {
+    justify-content: center; padding: 0 10px;
+    background: var(--ink); font-size: 15px; text-decoration: none;
+  }
+  .visit-links a:not(.phone):hover { background: var(--terra); }
+
+  .site-footer { padding: 18px 0; }
+  .footer-inner { grid-template-columns: auto 1fr; align-items: center; gap: 14px; }
+  .footer-inner img { width: 44px; height: 44px; }
+  .footer-address, .footer-links { display: none; }
+}
+
+/* Small phones (320–374px): tighter rhythm so the page stays short */
+@media (max-width: 374px) {
+  body { font-size: 15px; }
+  .hero { min-height: 480px; }
+  .hero-card { margin: 0 8px 8px; padding: 16px 16px 16px; }
+  .hero h1 { font-size: 1.85rem; }
+  .hero-sub { margin: 10px 0 14px; font-size: 15px; line-height: 1.5; }
+  .btn-row { gap: 8px; }
+  .hero .btn { min-height: 44px; }
+
+  .classes { padding-top: 32px; padding-bottom: 36px; }
+  .truss { margin-bottom: 20px; }
+  .classes-grid { gap: 18px; }
+  .classes-title { font-size: 2rem; }
+  .facts { margin-bottom: 6px; }
+  .facts div { padding: 8px 0; }
+  .facts dt { display: inline; font-size: 16px; margin-right: .35em; }
+  .facts dd { display: inline; margin: 0; font-size: 15px; line-height: 1.5; }
+
+  .reviews { padding: 36px 0; }
+  .reviews h2 { font-size: 1.75rem; margin-bottom: 0; }
+  .review { padding: 14px 0; }
+  .review p { font-size: 15px; line-height: 1.5; margin-bottom: 6px; }
+  .review-lead p { font-size: 18px; line-height: 1.4; }
+  .reviews-fig { margin: 4px 0 6px; }
+  .reviews-fig figcaption { margin-top: 6px; }
+
+  .events { padding: 36px 0; }
+  .events-grid { gap: 24px; }
+  .events h2 { font-size: 2rem; }
+  .events-copy > p { margin: 12px 0 4px; font-size: 15px; line-height: 1.5; }
+  .pull { margin: 12px 0; padding-left: 14px; }
+  .pull p { font-size: 1.2rem; }
+  .events-copy .btn { margin-top: 8px; }
+
+  .visit { padding: 32px 0 28px; }
+  .visit h2 { font-size: 2rem; }
+  .visit-address { font-size: 16px; }
+  .visit-detail { margin-top: 16px; }
+  .visit-list li { padding: 7px 0; font-size: 15px; }
+  .visit-list strong { font-size: 16px; }
+  .visit-links .phone { font-size: 1.75rem; }
+}
+
 /* Desktop: larger sticky opening-week photo beside the quotes */
 @media (min-width: 1024px) {
   .reviews-grid { grid-template-columns: 5fr 7fr; gap: clamp(40px, 6vw, 96px); align-items: start; }
