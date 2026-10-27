@@ -203,9 +203,6 @@ a:focus-visible { outline: 3px solid var(--terra); outline-offset: 3px; }
   .classes-fig { margin: 0; }
   .classes-title { align-self: end; }
 
-  .reviews-grid { grid-template-columns: 5fr 7fr; gap: clamp(40px, 6vw, 96px); align-items: start; }
-  .reviews-fig { position: sticky; top: 104px; }
-
   .visit-grid { grid-template-columns: 7fr 5fr; gap: clamp(40px, 6vw, 96px); }
 
   .footer-inner { grid-template-columns: auto 1fr auto; align-items: center; gap: 14px 32px; }
@@ -233,8 +230,21 @@ a:focus-visible { outline: 3px solid var(--terra); outline-offset: 3px; }
   }
 }
 
+/* Below desktop: heading, lead quote, then the photo, then the other two quotes */
+@media (max-width: 1023.98px) {
+  .reviews-grid { gap: 0; }
+  .reviews-copy { display: contents; }
+  .reviews h2 { order: 1; }
+  .review { order: 4; }
+  .review-lead { order: 2; }
+  .reviews-fig { order: 3; margin: 6px 0 12px; }
+  .review-lead + .review { border-top: 0; }
+}
+
 /* Desktop: larger sticky opening-week photo beside the quotes */
 @media (min-width: 1024px) {
+  .reviews-grid { grid-template-columns: 5fr 7fr; gap: clamp(40px, 6vw, 96px); align-items: start; }
+  .reviews-fig { position: sticky; top: 104px; }
   .reviews-grid { grid-template-columns: min(42%, 620px) minmax(0, 1fr); }
   .reviews-fig { max-width: 620px; top: 96px; }
   .reviews-fig img { width: 100%; max-height: calc(100vh - 150px); object-fit: cover; }
